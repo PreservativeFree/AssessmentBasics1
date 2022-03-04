@@ -8,10 +8,17 @@ const reader = readline.createInterface({
 console.log("Welcome to the password validator tool!");
 
 let stringUserInput;
-
-reader.question("Please enter the desired password ", function(input) {
+let doesInputNumber = false;
+reader.question("Please enter the desired password, your password must start with the word Kiwi ", function(input) {
     stringUserInput = input;
-    if(stringUserInput.length >= 10) {
+    stringUserInput= input.slice(0,4);
+    //console.log(stringUserInput);
+   // for(let i; input.length; i++) {
+   //     if(input[i].isInteger(9)) {
+    //        doesInputNumber = true;
+    //    }
+   // }
+    if(input.length >= 10 && stringUserInput == "Kiwi") {
         console.log("Excellent, this is a strong password!");
     } else {
         console.log("Sorry this is a weak password please try again");
